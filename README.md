@@ -1,5 +1,5 @@
 # Uninhibited
-LifeHack 2022 with Andre Tzeyang &amp; Jin Yuan!!!
+LifeHack 2022 with Andre Tzeyoung &amp; Jin Yuan!!!
 
 Uninhibited is our plan to make Singapore a more welcoming environment for the physically disabled. Our website provides an avenue for people with disabilities (or those around them) to raise any concerns regarding the accessibility of our public facilities. With our platform, areas that have been neglected or overlooked in terms of amenities for the disabled can be made known to the relevant authorities (government, condominium management, etc.). We aim to be the bridge that allows the people and government to work hand-in-hand and transform Singapore into a more inclusive country.
 
