@@ -1,0 +1,224 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    max-width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, white, #8380af)
+}
+
+.header {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    height: 80px;
+}
+
+#logo {
+    margin-right:auto;
+    margin-left: 20px;
+    height: 80px;
+    width: auto;
+}
+
+#MenuButton{
+    height: auto;
+    width: auto;
+    text-align: center;
+    margin: auto 50px;
+}
+
+a {
+    color:black;
+    text-decoration: none;
+}
+
+.body{
+    margin: 20px 0;
+    max-height: fit-content;
+}
+
+#aboutus{
+    margin-bottom: 20vh ;
+}
+
+#aboutus *{
+    color:black;
+    display: block;
+}
+
+#title, #shortdesc{
+    text-align:center;
+}
+
+#title {
+    color: black;
+    font-size: 64px;
+}
+
+#links{
+    display: flex;
+    justify-content: center;
+}
+
+#links a{
+    border: 5px solid black;
+    border-radius: 10px;
+    height: 40vh;
+    width: 40vh;
+    margin: 20px;
+}
+ 
+#links a *{
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+}
+
+#description{
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.feedbackContainer{
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    color: grey;
+}
+
+.mapPageTitle{
+    text-align: center;
+    margin: 50px auto;
+}
+
+#map {
+    display: block;
+    margin: 0px auto;
+    height: 60vh;
+    width: 60vw;
+}
+
+.locationList{
+    color: black;
+    font-size: x-large;
+    margin-left: 60px;
+}
+
+.locationSector{
+    color: grey;
+    font-size: x-large;
+    margin-left: 80px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h2{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 50px;
+}
+
+h3{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+/*
+.items{
+    margin-bottom: 50px;
+    margin-left: 40px;
+    list-style-type: none;
+}
+
+.filterRows{
+    display: flex;
+}
+
+.filterCriteria{
+    margin-left: 50px;
+    align-self: flex-start;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+*/
+.displayNone{
+    display: none;
+}
+
+label {
+display: block;
+    margin: 0.5rem 0;
+}
+
+form {
+    width: 60vw;
+      max-width: 500px;
+      min-width: 300px;
+      margin: 0 auto;
+    padding-bottom: 2em;
+  }
+
+input,
+textarea,
+select {
+margin: 10px 0 0 0;
+    width: 100%;
+min-height: 2em;
+}
+
+input, textarea {
+background-color: #243d54;
+border: 1px solid #243d54;
+color: #ffffff;
+}
+
+.inline {
+width: unset;
+margin: 0 0.5em 0 0;
+vertical-align: middle;
+}
+
+input[type="submit"] {
+display: block;
+width: 60%;
+margin: 1em auto;
+height: 2em;
+font-size: 1.1rem;
+background-color: #3b3b4f;
+border-color: white;
+min-width: 300px;
+}
+
+input[type="file"] {
+padding: 1px 2px;
+}
+
+#locationGridContainer{
+    font-color: red;
+    display: grid;
+    margin-left: 100px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-row-gap: 25px;
+}

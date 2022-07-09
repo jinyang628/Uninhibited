@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G4 LifeHack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div id='logo'>
+            <a href="index.html"><img id="logopic" height="80" src="images/Logo.png"></a>
+        </div>
+        <div id="MenuButton">
+            <a href="index.html">Home</a>
+        </div>
+        <div id="Locations">
+            <a href="Map.html">Locations</a>
+        </div>
+        <div id="MenuButton">
+            <a href="index.html">Contact us</a>
+        </div>
+    </div>
+
+    <p id="title">Work-In-Progress</p><br>
+        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d143269.6914273722!2d103.78568024358276!3d1.3492842741369553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssg!4v1657364070297!5m2!1sen!2ssg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   
+        <div class = "small-container">
+            <h2>Locations</h2>
+            <div class = "row">
+                <h4>Filter Categories</h4>
+                <div class="filterRows">
+                    
+                    <ul class="inline">   
+                        <li><input id ="catsector" class ="catbox" type="checkbox" input checked onchange="filterCategoryAppear(this)">   Sector</li>
+                        <li><input id ="cattown" class ="catbox" type="checkbox" input checked onchange="filterCategoryAppear(this)">   Town</li>
+                        <li><input id ="catblkNumber" class ="catbox" type="checkbox" input checked onchange="filterCategoryAppear(this)">   Block Number</li>
+                        <li><input id ="catamenitycategory" class ="catbox" type="checkbox" input checked onchange="filterCategoryAppear(this)">   Amenity Category</li>
+                    </ul>
+
+                    <select id="sectorfilterCriteria" class = "filterCriteria displayNone" onchange="filterCategories(this.id, 'sector')">
+                        <option value ="North">North</option>
+                        <option value ="South">South</option>                 
+                        <option value ="West">West</option>
+                        <option value ="East">East</option>
+                        <option value ="Central">Central</option>
+                    </select>
+
+                    <select id="townfilterCriteria" class = "filterCriteria displayNone" onchange="filterCategories(this.id, 'town')">
+                        <!-- DONT HARD CODE THIS PLEASE DYNAMICALLY CREATE IT
+                        <option value ="Default">Default Order</option>
+                        <option value ="P_Ascending">Sort by Price (Ascending)</option>                 
+                        <option value ="P_Descending">Sort by Price (Descending)</option>
+                        <option value ="Rating">Sort by Rating</option>
+                        -->
+                    </select>
+
+                    <select id="blkNumberfilterCriteria" class = "filterCriteria displayNone" onchange="filterCategories(this.id, 'blkNumber')">
+                        <option value ="1-200">1-200</option>
+                        <option value ="201-400">201-400</option>                 
+                        <option value ="401-600">401-600</option>
+                        <option value ="601-800">601-800</option>
+                        <option value ="801-999">801-999</option>
+                    </select>
+
+                    <select id="amenitycategoryfilterCriteria" class = "filterCriteria displayNone" onchange="filterCategories(this.id, 'amenityCategory')">
+                        <option value ="Wheelchair Ramp">Wheelchair Ramp</option>
+                        <option value ="Lift">Lift</option>                 
+                        <option value ="Handrail">Handrail</option>
+                        <option value ="Audio Alert">Audio Alert</option>
+                        <option value ="Visual Alert">Visual Alert</option>
+                        <option value ="Tactile Paving">Tactile Paving</option>
+                        <option value ="Traffic Lights">Traffic Lights</option>
+                        <option value ="Others">Others</option>
+                    </select>               
+                </div>
+            </div>     
+        </div>
+
+        <div id = "locationGridContainer">
+            <div class="wipEntry" id="wipEntry1">
+                <p class="sector">North</p>
+                <p class="town">Yishun</p>
+                <p class="blkNumber">122</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+            
+             <div class="wipEntry" id="wipEntry2">
+                <p class="sector">North</p>
+                <p class="town">Yishun</p>
+                <p class="blkNumber">450</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+             <div class="wipEntry" id="wipEntry3">
+                <p class="sector">North</p>
+                <p class="town">Sengkang</p>
+                <p class="blkNumber">233</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+            
+            <div class="wipEntry" id="wipEntry4">
+                <p class="sector">North</p>
+                <p class="town">Sengkang</p>
+                <p class="blkNumber">189</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry5">
+                <p class="sector">North</p>
+                <p class="town">Woodlands</p>
+                <p class="blkNumber">697</p>
+                <p class="amenityCategory">Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry6">
+                <p class="sector">North</p>
+                <p class="town">Woodlands</p>
+                <p class="blkNumber">981</p>
+                <p class="amenityCategory">Handrail</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry7">
+                <p class="sector">North</p>
+                <p class="town">Kranji</p>
+                <p class="blkNumber">239</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry8">
+                <p class="sector">North</p>
+                <p class="town">Kranji</p>
+                <p class="blkNumber">762</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry9">
+                <p class="sector">North</p>
+                <p class="town">Sembawang</p>
+                <p class="blkNumber">98</p>
+                <p class="amenityCategory">Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry10">
+                <p class="sector">North</p>
+                <p class="town">Sembawang</p>
+                <p class="blkNumber">633</p>
+                <p class="amenityCategory">Handrail</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry11">
+                <p class="sector">South</p>
+                <p class="town">Telok Blangah</p>
+                <p class="blkNumber">372</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry12">
+                <p class="sector">South</p>
+                <p class="town">Telok Blangah</p>
+                <p class="blkNumber">45</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry13">
+                <p class="sector">South</p>
+                <p class="town">Telok Blangah</p>
+                <p class="blkNumber">214</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry14">
+                <p class="sector">South</p>
+                <p class="town">Telok Blangah</p>
+                <p class="blkNumber">910</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry15">
+                <p class="sector">South</p>
+                <p class="town">Telok Blangah</p>
+                <p class="blkNumber">876</p>
+                <p class="amenityCategory"> Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry16">
+                <p class="sector">South</p>
+                <p class="town">Bukit Merah</p>
+                <p class="blkNumber">532</p>
+                <p class="amenityCategory">Handrail</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry17">
+                <p class="sector">South</p>
+                <p class="town">Bukit Merah</p>
+                <p class="blkNumber">234</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry18">
+                <p class="sector">South</p>
+                <p class="town">Bukit Merah</p>
+                <p class="blkNumber">74</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry19">
+                <p class="sector">South</p>
+                <p class="town">Bukit Merah</p>
+                <p class="blkNumber">733</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry20">
+                <p class="sector">South</p>
+                <p class="town">Bukit Merah</p>
+                <p class="blkNumber">120</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry21">
+                <p class="sector">East</p>
+                <p class="town">Tampines</p>
+                <p class="blkNumber">811</p>
+                <p class="amenityCategory">Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry22">
+                <p class="sector">East</p>
+                <p class="town">Tampines</p>
+                <p class="blkNumber">203</p>
+                <p class="amenityCategory">Handrail</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry23">
+                <p class="sector">East</p>
+                <p class="town">Bedok</p>
+                <p class="blkNumber">68</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry24">
+                <p class="sector">East</p>
+                <p class="town">Bedok</p>
+                <p class="blkNumber">85</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry25">
+                <p class="sector">East</p>
+                <p class="town">Bedok</p>
+                <p class="blkNumber">14</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry26">
+                <p class="sector">East</p>
+                <p class="town">Simei</p>
+                <p class="blkNumber">152</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry27">
+                <p class="sector">East</p>
+                <p class="town">Pasir Ris</p>
+                <p class="blkNumber">292</p>
+                <p class="amenityCategory">Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry28">
+                <p class="sector">East</p>
+                <p class="town">Pasir Ris</p>
+                <p class="blkNumber">720</p>
+                <p class="amenityCategory">Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry29">
+                <p class="sector">East</p>
+                <p class="town">Kallang</p>
+                <p class="blkNumber">150</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry30">
+                <p class="sector">East</p>
+                <p class="town">Kallang</p>
+                <p class="blkNumber">8</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry31">
+                <p class="sector">West</p>
+                <p class="town">Jurong East</p>
+                <p class="blkNumber">568</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+            
+            <div class="wipEntry" id="wipEntry32">
+                <p class="sector">West</p>
+                <p class="town">Jurong East</p>
+                <p class="blkNumber">11</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+            
+            <div class="wipEntry" id="wipEntry33">
+                <p class="sector">West</p>
+                <p class="town">Pioneer</p>
+                <p class="blkNumber">309</p>
+                <p class="amenityCategory">Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry34">
+                <p class="sector">West</p>
+                <p class="town">Pioneer</p>
+                <p class="blkNumber">932</p>
+                <p class="amenityCategory">Handrail</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry35">
+                <p class="sector">West</p>
+                <p class="town">Lakeside</p>
+                <p class="blkNumber">196</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry36">
+                <p class="sector">West</p>
+                <p class="town">Lakeside</p>
+                <p class="blkNumber">698</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry37">
+                <p class="sector">West</p>
+                <p class="town">Boon Lay</p>
+                <p class="blkNumber">741</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry38">
+                <p class="sector">West</p>
+                <p class="town">Boon Lay</p>
+                <p class="blkNumber">978</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+            
+            <div class="wipEntry" id="wipEntry39">
+                <p class="sector">West</p>
+                <p class="town">Choa Chu Kang</p>
+                <p class="blkNumber">397</p>
+                <p class="amenityCategory">Traffic Light</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry40">
+                <p class="sector">West</p>
+                <p class="town">Choa Chu Kang</p>
+                <p class="blkNumber">906</p>
+                <p class="amenityCategory">Handrail</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry41">
+                <p class="sector">Central</p>
+                <p class="town">Sin Ming</p>
+                <p class="blkNumber">20</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry42">
+                <p class="sector">Central</p>
+                <p class="town">Sin Ming</p>
+                <p class="blkNumber">138</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry43">
+                <p class="sector">Central</p>
+                <p class="town">Ang Mo Kio</p>
+                <p class="blkNumber">339</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry44">
+                <p class="sector">Central</p>
+                <p class="town">Ang Mo Kio</p>
+                <p class="blkNumber">566</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry45">
+                <p class="sector">Central</p>
+                <p class="town">Marymount</p>
+                <p class="blkNumber">338</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry46">
+                <p class="sector">Central</p>
+                <p class="town">Marymount</p>
+                <p class="blkNumber">922</p>
+                <p class="amenityCategory">Handrail</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry47">
+                <p class="sector">Central</p>
+                <p class="town">Toa Payoh</p>
+                <p class="blkNumber">789</p>
+                <p class="amenityCategory">Audio Alert</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry48">
+                <p class="sector">Central</p>
+                <p class="town">Toa Payoh</p>
+                <p class="blkNumber">436</p>
+                <p class="amenityCategory">Tactile Paving</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry49">
+                <p class="sector">Central</p>
+                <p class="town">Thomson</p>
+                <p class="blkNumber">747</p>
+                <p class="amenityCategory">Lift</p>
+            </div>
+
+            <div class="wipEntry" id="wipEntry50">
+                <p class="sector">Central</p>
+                <p class="town">Thomson</p>
+                <p class="blkNumber">119</p>
+                <p class="amenityCategory">Wheelchair Ramp</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="mapScripts.js"></script>
+
+<!--
+            <p class="locationList">List of Locations with WIP</p>
+            <p class="locationSector">North</p>
+
+            <ul>
+                <li>
+                    <p class="specificLocation"></p>
+                </li>
+                <li>
+                    <p class="specificLocation"></p>
+                </li>
+                <li>
+            <p class="locationSector">South</p>
+            <p class="locationSector">East</p>
+            <p class="locationSector">West</p>
+            <p class="locationSector">Central</p>
+-->
+
+
+
+
+
+            <!-- \\\\\ Jin Yuan sth like this will do
+                
+            -->

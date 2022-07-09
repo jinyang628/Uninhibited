@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G4 LifeHack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div id='logo'>
+            <a href="index.html"><img id="logopic" height="80" src="images/Logo.png"></a>
+        </div>
+        <div id="MenuButton">
+            <a href="index.html">Home</a>
+        </div>
+        <div id="Locations">
+            <a href="Map.html">Locations</a>
+        </div>
+        <div id="MenuButton">
+            <a href="index.html">Contact us</a>
+        </div>
+    </div>  
+    <p id="title">Feedback Form</p><br>
+    <div class="container feedbackContainer">
+        <form action="actionpage.php" method="POST">
+            <label><b>Email</b></label>
+            <input type="email" name="email" id="email" value="" maxlength="50" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"><br><br>
+
+            <label><b>Phone Number</b></label>
+            <input type="text" name="phoneNumber" id="phoneNumber" value="" minlength="8" maxlength="8" required><br><br>
+
+            <label><b>Postal Code</b></label>
+            <input type="text" name="postalCode" id="postalCode" value="" minlength="6" maxlength="6" required><br><br>
+
+            <label><b>Amenity Category</label>
+            <p><em>Choose the option that best describes the amenity you need</em></p>
+            <select id="category" name="category">
+                <option value="">(select one)</option>
+                <option value="Wheelchair Ramp">Wheelchair Ramp</option>
+                <option value="Lift">Lift</option>
+                <option value="Handrail">Handrail</option>
+                <option value="Audio Alert">Audio Alert</option>
+                <option value="Visual Alert ">Visual Alert</option>
+                <option value="Tactile Paving">Tactile Paving</option>
+                <option value="Traffic Lights">Traffic Lights</option>
+                <option value="Others">Others</option>
+            </select><br><br>
+
+            <label>Image</label>
+            <p><em>Attach a picture of the specific location you are concerned with</em></p>
+            <input type="file" id="img" name="img" accept="image/*" required><br><br>
+
+            <label><b>Description</b></label>
+            <p><em>A short description of the problem you are facing and how we can help you</em></p>
+            <textarea name="description" id="description" maxlength="300"></textarea><br><br>
+            
+            <input type="submit" value="Submit" style="margin-bottom: 150px;">
+
+            
+            </form> 
+    
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="feedbackScripts.js"></script>
